@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Standings</title>
+  <style>
+  
+</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+  $.getJSON("http://localhost:7878/country", function (data) {
+	    var html = '',
+	        el = document.getElementById("country");
+	    $.each(data, function (key, val) {
+
+	         html += "<br/><tr><td>" + val.countryID + "</td><td>" + val.countryName + "</td></tr><br/><div id=></div>";
+	    });
+	    el.innerHTML = html;
+	});
+  });
+  
+  </script>
+</head>
+<body>
+<div id="country"></div>
+<div id="league"></div>
+<div id="team"></div>
+<div id="standing"></div>
+
+</body>
+</html>
